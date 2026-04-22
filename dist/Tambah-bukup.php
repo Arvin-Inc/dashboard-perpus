@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (in_array($ext, $allowed)) {
             $foto_baru = time() . '_' . $foto;
-            $path = "/upload" . $foto_baru;
+            $path = "upload/" . $foto_baru;
 
             if (move_uploaded_file($tmp, $path)) {
                 $foto = $foto_baru;

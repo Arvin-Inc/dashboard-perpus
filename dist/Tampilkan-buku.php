@@ -147,12 +147,14 @@ session_start();
                                     $query = mysqli_query($conn, "SELECT * FROM buku");
 
                                     while ($row = mysqli_fetch_array($query)) {
+                                        $folder = "upload/";
                                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= $row['judul']; ?></td>
                                             <td><?= $row['pengarang']; ?></td>
                                             <td><?= $row['tahun_terbit'] ?? '-'; ?></td>
+                                            <td><img src="<?= $folder . $row['foto'] ?? '-'; ?>" alt="<?= $row['judul']; ?>"></td>
                                         </tr>
                                     <?php
                                     }
