@@ -120,6 +120,8 @@ session_start();
         <div id="layoutSidenav_content">
             <main>
                 <?php
+                include 'dashboard.php';
+
                 if (isset($_GET['page'])) {
                     $page = $_GET['page'];
                     switch ($page) {

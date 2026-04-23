@@ -33,7 +33,7 @@
                                             <td><?= $row['judul']; ?></td>
                                             <td><?= $row['pengarang']; ?></td>
                                             <td><?= $row['tahun_terbit'] ?? '-'; ?></td>
-                                            <td><img src="<?= $folder . $row['foto'] ?? '-'; ?>" alt="<?= $row['judul']; ?>"></td>
+                                            <td><img height="200" width="200" src="<?= $folder . $row['foto'] ?? '-'; ?>" alt="<?= $row['judul']; ?>"></td>
                                         </tr>
                                     <?php
                                     }
