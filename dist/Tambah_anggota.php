@@ -13,20 +13,20 @@
                         <div class="card-body">
                             <form action="Tambah-bukup.php" method="post" enctype="multipart/form-data">
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputName" type="text" placeholder="Masukkan Nama Buku" name="judul" /> <label for="inputName">Judul Buku</label>
+                                    <input class="form-control" id="inputName" type="text" placeholder="Masukkan Nama" name="nama_anggota" /> <label for="inputName">nama anggota</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputPenulis" type="text" placeholder="Masukkan Nama Penulis" name="penulis" /> <label for="inputPenulis">Penulis</label>
+                                    <input class="form-control" id="inputUmur" type="text" placeholder="Masukkan umur" name="umur" /> <label for="inputUmur">umur</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputPenerbit" type="text" placeholder="Masukkan Nama Penerbit" name="penerbit" /> <label for="inputPenerbit">Penerbit</label>
+                                    <input class="form-control" id="inputAlamat" type="text" placeholder="Masukkan Nama Alamat" name="alamat" /> <label for="inputAlamat">alamat</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputTahun" type="number" placeholder="Masukkan Tahun Terbit" name="tahun_terbit" /> <label for="inputTahun">Tahun Terbit</label>
+                                    <input class="form-control" id="inputTahunLahir" type="date" placeholder="Masukkan Tahun Lahir" name="tanggal_lahir" /> <label for="inputTahunLahir">tanggal lahir</label>
                                 </div>
                                 <div class="mt-4 mb-8">
                                     <div class="d-flex justify-content-between">
-                                        <input type="submit" class="btn btn-primary btn-block" value="Tambah Buku">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Tambah Anggota">
                                         <input type="reset" class="btn btn-danger btn-block" value="reset data">
                                     </div>
                                 </div>
