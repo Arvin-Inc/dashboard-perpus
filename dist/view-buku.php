@@ -18,6 +18,7 @@
                                         <th>Judul Buku</th>
                                         <th>Penulis</th>
                                         <th>Tahun</th>
+                                        <th>Foto</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +32,7 @@
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= $row['judul']; ?></td>
-                                            <td><?= $row['pengarang']; ?></td>
+                                            <td><?= $row['penulis']; ?></td>
                                             <td><?= $row['tahun_terbit'] ?? '-'; ?></td>
                                             <td><img height="200" width="200" src="<?= $folder . $row['foto'] ?? '-'; ?>" alt="<?= $row['judul']; ?>"></td>
                                         </tr>

@@ -6,13 +6,13 @@ if (isset($_GET['page'])) {
             include 'Tambah-buku.php';
             break;
         case 'tampilan-buku':
-            include 'Tampilkan-buku.php';
+            include 'view-buku.php';
             break;
         case 'tambah-anggota':
-            include 'Tambah-bukup.php';
+            include 'tambah-buku.php';
             break;
         case 'tampilan-anggota':
-            include 'Tampil-anggota.php';
+            include 'view-anggota.php';
         default:
             echo "<script>alert('Data Tidak Tersedia');</script>";
     }

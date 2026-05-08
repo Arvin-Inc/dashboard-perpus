@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Harap isi semua kolom'); window.location.href = 'index.php?page=tambah-buku'</script>";
     } else {
 
-        $insert = mysqli_query($conn, "INSERT INTO buku (judul, pengarang, penerbit, tahun_terbit, foto) VALUES ('$judul', '$penulis', '$penerbit', '$tahun_terbit', '$foto')");
+        $insert = mysqli_query($conn, "INSERT INTO buku (judul, penulis, penerbit, tahun_terbit, foto) VALUES ('$judul', '$penulis', '$penerbit', '$tahun_terbit', '$foto')");
         
         if ($insert) {
             echo "<script>alert('Data buku berhasil ditambahkan.'); window.location.href = 'index.php?page=tambah-buku';</script>";
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             Form Tambah Buku
                         </div>
                         <div class="card-body">
-                            <form action="Tambah-bukup.php" method="post" enctype="multipart/form-data">
+                            <form action="tambah-buku.php" method="post" enctype="multipart/form-data">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="inputName" type="text" placeholder="Masukkan Nama Buku" name="judul" /> <label for="inputName">Judul Buku</label>
                                 </div>

@@ -85,7 +85,7 @@ session_start();
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="index.php?page=tambah-anggota">Tambah anggota</a>
-                                        <a class="nav-link" href="index.php?page=tampil-anggota">Tampil anggota</a>
+                                        <a class="nav-link" href="index.php?page=view-anggota">Daftar anggota</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -95,7 +95,7 @@ session_start();
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="index.php?page=tambah-buku">Tambah Buku</a>
-                                        <a class="nav-link" href="index.php?page=tampilan-buku">Tampilan Buku</a>
+                                        <a class="nav-link" href="index.php?page=view-buku">Daftar Buku</a>
                                     </nav>
                                 </div>
                             </nav>
@@ -113,8 +113,8 @@ session_start();
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="index.php?page=tambah-anggota">Tambah Peminjaman</a>
-                                        <a class="nav-link" href="index.php?page=tampil-anggota">Tampil Peminjaman</a>
+                                        <a class="nav-link" href="index.php?page=tambah-peminjaman">Tambah Peminjaman</a>
+                                        <a class="nav-link" href="index.php?page=view-peminjaman">Tampil Peminjaman</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -123,7 +123,7 @@ session_start();
                                 </a>
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="index.php?page=tampilan-buku">Tampilan Laporan</a>
+                                        <a class="nav-link" href="index.php?page=view-laporan">Tampilan Laporan</a>
                                     </nav>
                                 </div>
                             </nav>
@@ -156,16 +156,23 @@ session_start();
                             include 'dashboard.php';
                             break;
                         case 'tambah-buku':
-                            include 'Tambah-bukup.php';
+                            include 'tambah-buku.php';
                             break;
-                        case 'tampilan-buku':
-                            include 'Tampilkan-buku.php';
+                        case 'view-buku':
+                            include 'view-buku.php';
                             break;
                         case 'tambah-anggota':
-                            include 'Tambah_anggota.php';
+                            include 'tambah-anggota.php';
                             break;
-                        case 'tampil-anggota':
-                            include 'Tampil-anggota.php';
+                        case 'view-anggota':
+                            include 'view-anggota.php';
+                            break;
+                        case 'tambah-peminjaman':
+                            include 'tambah-peminjaman.php';
+                            break;
+                        case 'view-peminjaman':
+                            include 'view-peminjaman.php';
+                            break;
                         default:
                             echo "<script>alert('Data Tidak Tersedia');</script>";
                             include 'dashboard.php';

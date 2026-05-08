@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Form Tambah Anggota
         </div>
         <div class="card-body">
-            <form action="Tambah_anggota.php" method="post" enctype="multipart/form-data" require>
+            <form action="tambah-anggota.php" method="post" enctype="multipart/form-data" require>
                 <div class="form-floating mb-3">
                     <input class="form-control" id="inputName" type="text" placeholder="Masukkan Nama" name="nama_anggota" require /> <label for="inputName">nama anggota</label>
                 </div>
