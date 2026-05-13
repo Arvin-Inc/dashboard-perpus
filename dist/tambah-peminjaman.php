@@ -37,15 +37,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <select class="form-select" id="inputNamaPeminjam" type="text" placeholder="Nama Peminjam"
                         name="nama_peminjaman">
                         <option selected>Pilih Nama Peminjam...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
+                        <?php 
+                        $query = mysqli_query($conn, "SELECT * FROM anggota");
+                        while ($row = mysqli_fetch_array($query)) {
+                        ?>
+                        <option value="<?= $row['id']; ?>1"><?= $row['nama_anggota']; ?></option>
+                        <?php } ?>
                     </select> <label for="inputName">Nama Peminjam</label>
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-select" id="inputBuku" type="text" placeholder="Judul Buku" name="judul_buku">
                         <option selected>Pilih Judul Buku...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
+                        <?php 
+                        $query = mysqli_query($conn, "SELECT * FROM buku");
+                        while ($row = mysqli_fetch_array($query)) {
+                        ?>
+                        <option value="<?= $row['id']; ?>"><?= $row['judul']; ?></option>
+                        <?php } ?>
                     </select>
                     <label for="inputName">Nama Peminjam</label>
                 </div>
