@@ -3,6 +3,12 @@ include __DIR__ . '/../konek.php';
 session_start();
 // include 'logout.php';
 
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$role = $_SESSION['role'];
 
 ?>
 <!DOCTYPE html>
@@ -100,6 +106,7 @@ session_start();
                                 </div>
                             </nav>
                         </div>
+                        <?php if ($role === 'admin' || $role === 'petugas'): ?>
                          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePeminjaman" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                            Peminjaman & Laporan
@@ -128,12 +135,13 @@ session_start();
                                 </div>
                             </nav>
                         </div>
+                        <?php endif; ?>
                         <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="#">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-                        <a class="nav-link" href="tables.html">
+                        <a class="nav-link" href="#">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
                         </a>

@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_buku = $_POST['judul_buku'];
     $tanggal_peminjaman = $_POST['tgl_peminjaman'];
 
-    $insert_query = "INSERT INTO peminjaman (id_anggota, id_buku, tanggal_peminjaman) VALUES ('$id_peminjam', '$id_buku', '$tanggal_peminjaman');";
+    $insert_query = "INSERT INTO peminjaman (id_anggota, id_buku, tgl_peminjaman) VALUES ('$id_peminjam', '$id_buku', '$tanggal_peminjaman');";
 
     if (mysqli_query($conn, $insert_query)) {
-        echo "<script>alert('Data Peminjaman Berhasil Ditambahkan')</script>";
+        echo "<script>alert('Data Peminjaman Berhasil Ditambahkan'); window.location.href = 'index.php?page=tambah-peminjaman';</script>";
         exit();
     } else {
         echo "<script>alert('Data Peminjaman Gagal Ditambahkan')</script>";
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $query = mysqli_query($conn, "SELECT * FROM anggota");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
-                        <option value="<?= $row['id']; ?>1"><?= $row['nama_anggota']; ?></option>
+                        <option value="<?= $row['id']; ?>"><?= $row['nama_anggota']; ?></option>
                         <?php } ?>
                     </select> <label for="inputName">Nama Peminjam</label>
                 </div>

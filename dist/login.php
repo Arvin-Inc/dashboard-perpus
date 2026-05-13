@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     
     $queryUser = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-    $queryAnggota = mysqli_query($conn, "SELECT * FROM anggota WHERE nama_anggota = '$username' AND password = '$password'");
+    $queryAnggota = mysqli_query($conn, "SELECT * FROM anggota WHERE nama_anggota = '$username' AND pass = '$password'");
 
     if (mysqli_num_rows($queryUser) > 0) {
         $data = mysqli_fetch_assoc($queryUser);
@@ -30,12 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data1 = mysqli_fetch_assoc($queryAnggota);
         $_SESSION['login'] = true;
         $_SESSION['username'] = $data1['username'];
-        $_SESSION['nama'] = $data1['nama'];
+        $_SESSION['nama_anggota'] = $data1['nama_anggota'];
+        $_SESSION['role'] = $data1['role'];
 
         header("Location: index.php");
         exit;
     } else {
-        echo "<script>alert('Gagal Login');</script>";
+        echo "<script>alert('Gagal Login, sepertinya username atau password salah');</script>";
     }
 }
 ?>
