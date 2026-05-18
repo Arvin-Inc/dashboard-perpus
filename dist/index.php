@@ -20,7 +20,7 @@ $role = $_SESSION['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Dashboard - Perpustakaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -165,6 +165,12 @@ $role = $_SESSION['role'];
                             break;
                         case 'tambah-buku':
                             include 'tambah-buku.php';
+                            break;
+                        case 'edit-buku':
+                            include 'edit-buku.php';
+                            break;
+                        case 'edit-anggota':
+                            include 'edit-anggota.php';
                             break;
                         case 'view-buku':
                             include 'view-buku.php';
