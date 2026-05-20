@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_buku = $_POST['judul_buku'];
     $tanggal_peminjaman = $_POST['tgl_peminjaman'];
 
-    $insert_query = "INSERT INTO peminjaman (id_anggota, id_buku, tgl_peminjaman) VALUES ('$id_peminjam', '$id_buku', '$tanggal_peminjaman');";
+    $insert_query = "INSERT INTO peminjaman (id_anggota, id_buku, tanggal_peminjaman) VALUES ('$id_peminjam', '$id_buku', '$tanggal_peminjaman');";
 
     if (mysqli_query($conn, $insert_query)) {
         echo "<script>alert('Data Peminjaman Berhasil Ditambahkan'); window.location.href = 'index.php?page=tambah-peminjaman';</script>";

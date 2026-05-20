@@ -187,6 +187,9 @@ $role = $_SESSION['role'];
                         case 'view-peminjaman':
                             include 'view-peminjaman.php';
                             break;
+                        case 'view-laporan':
+                            include 'laporan.php';
+                            break;
                         default:
                             echo "<script>alert('Data Tidak Tersedia');</script>";
                             include 'dashboard.php';
