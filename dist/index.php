@@ -100,6 +100,7 @@ session_start();
                                 </div>
                             </nav>
                         </div>
+                        <!--  -->
                          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePeminjaman" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                            Peminjaman & Laporan
@@ -107,6 +108,7 @@ session_start();
                         </a>
                         <div class="collapse" id="collapsePeminjaman" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <!--  -->
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                     Peminjaman
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -117,6 +119,7 @@ session_start();
                                         <a class="nav-link" href="index.php?page=view-peminjaman">Tampil Peminjaman</a>
                                     </nav>
                                 </div>
+                                <!--  -->
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                     Laporan
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -128,6 +131,7 @@ session_start();
                                 </div>
                             </nav>
                         </div>
+                        <!--  -->
                         <div class="sb-sidenav-menu-heading">Addons</div>
                         <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
