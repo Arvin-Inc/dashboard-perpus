@@ -3,6 +3,12 @@ include __DIR__ . '/../konek.php';
 session_start();
 // include 'logout.php';
 
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$role = $_SESSION['role'];
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +20,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - Admin</title>
+    <title>Dashboard - Perpustakaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -100,7 +106,7 @@ session_start();
                                 </div>
                             </nav>
                         </div>
-                        <!--  -->
+                        <?php if ($role === 'admin' || $role === 'petugas'): ?>
                          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePeminjaman" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                            Peminjaman & Laporan
@@ -108,7 +114,6 @@ session_start();
                         </a>
                         <div class="collapse" id="collapsePeminjaman" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <!--  -->
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                     Peminjaman
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -119,7 +124,6 @@ session_start();
                                         <a class="nav-link" href="index.php?page=view-peminjaman">Tampil Peminjaman</a>
                                     </nav>
                                 </div>
-                                <!--  -->
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                     Laporan
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -131,13 +135,13 @@ session_start();
                                 </div>
                             </nav>
                         </div>
-                        <!--  -->
+                        <?php endif; ?>
                         <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="#">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-                        <a class="nav-link" href="tables.html">
+                        <a class="nav-link" href="#">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
                         </a>
@@ -161,6 +165,12 @@ session_start();
                             break;
                         case 'tambah-buku':
                             include 'tambah-buku.php';
+                            break;
+                        case 'edit-buku':
+                            include 'edit-buku.php';
+                            break;
+                        case 'edit-anggota':
+                            include 'edit-anggota.php';
                             break;
                         case 'view-buku':
                             include 'view-buku.php';

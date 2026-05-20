@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Username sudah terdaftar');</script>";
         header("Location: register.php");
     } else {
-        $query = mysqli_query($conn, "INSERT INTO user (username, gmail, password, role) VALUES ('$username', '$email', '$password', '$role')");
+        $query = mysqli_query($conn, "INSERT INTO user (username, gmail, password, role, nama) VALUES ('$username', '$email', '$password', '$role', '$username')");
         if ($query) {
             echo "<script>alert('Registrasi Berhasil');</script>";
             header("Location: login.php");

@@ -33,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($judul) || empty($penulis) || empty($penerbit) || empty($tahun_terbit)) {
         echo "<script>alert('Harap isi semua kolom'); window.location.href = 'index.php?page=tambah-buku'</script>";
     } else {
-        
-        $insert = mysqli_query($conn, "INSERT INTO buku (judul, penulis, penerbit, tahun_terbit, foto) VALUES ('$judul', '$penulis', '$penerbit', '$tahun_terbit', '$foto')");
 
+        $insert = mysqli_query($conn, "INSERT INTO buku (judul, penulis, penerbit, tahun_terbit, foto) VALUES ('$judul', '$penulis', '$penerbit', '$tahun_terbit', '$foto')");
+        
         if ($insert) {
             echo "<script>alert('Data buku berhasil ditambahkan.'); window.location.href = 'index.php?page=tambah-buku';</script>";
         } else {
