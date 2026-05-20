@@ -1,6 +1,19 @@
 <?php
 include __DIR__ . '/../konek.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['delete'])) {
+        $id = $_POST['id'];
+        $delete = mysqli_query($conn, "DELETE FROM peminjaman WHERE id_peminjaman='$id'");
+
+        if ($delete) {
+            echo "<script>alert('Data peminjaman berhasil dihapus.'); window.location.href = 'index.php?page=view-peminjaman';</script>";
+        } else {
+            echo "<script>alert('Gagal menghapus data peminjaman.');</script>";
+        }
+    }
+}
+
 ?>
 
 <div class="container-fluid px-4">
@@ -29,7 +42,7 @@ include __DIR__ . '/../konek.php';
                 <tbody>
                     <?php
                     $no = 1;
-                    $innerJoin = 'SELECT anggota.nama_anggota, buku.judul  FROM peminjaman INNER JOIN anggota ON peminjaman.id_anggota = anggota.id INNER JOIN buku ON peminjaman.id_buku = buku.id;';
+                    $innerJoin = "SELECT anggota.nama_anggota, buku.judul, peminjaman.tanggal_peminjaman, peminjaman.id_peminjaman  FROM peminjaman INNER JOIN anggota ON peminjaman.id_anggota = anggota.id INNER JOIN buku ON peminjaman.id_buku = buku.id;";
                     $query = mysqli_query($conn, $innerJoin);
 
                     while ($row = mysqli_fetch_array($query)) {
@@ -42,10 +55,10 @@ include __DIR__ . '/../konek.php';
                             <td><?= htmlspecialchars($row['judul']); ?></td>
                             <td><?= htmlspecialchars($row['tanggal_peminjaman']); ?></td>
                             <td>
-                                <a href="index.php?page=edit-buku&id=<?= $row['id']; ?>"
+                                <a href="index.php?page=edit-peminjaman&id=<?= $row['id_peminjaman']; ?>"
                                     class="btn btn-sm btn-primary mb-1">Edit</a>
-                                <form action="index.php?page=view-buku" method="post" class="d-inline">
-                                    <input type="hidden" name="id" value="<?= $row['id']; ?>">
+                                <form action="index.php?page=view-peminjaman" method="post" class="d-inline">
+                                    <input type="hidden" name="id" value="<?= $row['id_peminjaman']; ?>">
                                     <button type="submit" name="delete" value="1" class="btn btn-sm btn-danger mb-1"
                                         onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</button>
                                 </form>

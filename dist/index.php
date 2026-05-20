@@ -172,6 +172,9 @@ $role = $_SESSION['role'];
                         case 'edit-anggota':
                             include 'edit-anggota.php';
                             break;
+                        case 'edit-peminjaman':
+                            include 'edit-peminjaman.php';
+                            break;
                         case 'view-buku':
                             include 'view-buku.php';
                             break;
