@@ -1,5 +1,38 @@
 <?php
 include __DIR__ . '/../konek.php';
+
+
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$peminjaman = null;
+
+if ($id > 0) {
+    $result = mysqli_query($conn, "SELECT * FROM peminjaman WHERE id_peminjaman='$id'");
+    $peminjaman = mysqli_fetch_assoc($result);
+}
+
+if (!$peminjaman) {
+    echo "<script>alert('Peminjaman tidak ditemukan.'); window.location.href = 'index.php?page=view-peminjaman';</script>";
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_anggota = trim($_POST['id_anggota']);
+    $id_buku = trim($_POST['id_buku']);
+    $tanggal_peminjaman = trim($_POST['tanggal_peminjaman']);
+
+    if (empty($id_anggota) || empty($id_buku) || empty($tanggal_peminjaman)) {
+        echo "<script>alert('Harap isi semua kolom.');</script>";
+    } else {
+        $update = mysqli_query($conn, "UPDATE peminjaman SET id_anggota='$id_anggota', id_buku='$id_buku', tanggal_peminjaman='$tanggal_peminjaman' WHERE id_peminjaman='$id'");
+
+        if ($update) {
+            echo "<script>alert('Data peminjaman berhasil diperbarui.'); window.location.href = 'index.php?page=view-peminjaman';</script>";
+            exit;
+        } else {
+            echo "<script>alert('Gagal memperbarui data peminjaman.');</script>";
+        }
+    }
+}
 ?>
 
 <div class="container-fluid px-4">

@@ -6,9 +6,9 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
     $queryUser = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-    $queryAnggota = mysqli_query($conn, "SELECT * FROM anggota WHERE nama_anggota = '$username' AND pass = '$password'");
+    $queryAnggota = mysqli_query($conn, "SELECT * FROM anggota WHERE nama_anggota = '$username' AND password = '$password'");
 
     if (mysqli_num_rows($queryUser) > 0) {
         $data = mysqli_fetch_assoc($queryUser);
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['username'] = $data['username'];
         $_SESSION['nama'] = $data['nama'];
         $_SESSION['role'] = $data['role'];
-        
+
         if($_SESSION['role'] == 'admin') {
             header("Location: index.php");
             exit;

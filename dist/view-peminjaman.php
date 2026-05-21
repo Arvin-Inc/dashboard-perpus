@@ -46,8 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $query = mysqli_query($conn, $innerJoin);
 
                     while ($row = mysqli_fetch_array($query)) {
-                        $folder = "upload/";
-                        $fotoSrc = !empty($row['foto']) ? $folder . $row['foto'] : 'https://via.placeholder.com/200x200?text=No+Image';
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>
